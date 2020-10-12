@@ -26,7 +26,12 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const { id } = req.params
 
-  const plant = plants.filter(item => item.id === parseInt(id))
+  const plant = plants.filter(item => item.id === parseInt(id))[0]
+
+  if (!plant) {
+    throw new Error('Not found')
+  }
+
   res.json(plant)
 })
 
