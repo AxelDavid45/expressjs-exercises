@@ -1,10 +1,10 @@
 {
-  "name": "leanjs-express-exercises",
+  "name": "express-exercises",
   "version": "1.0.0",
   "description": "Exercises expressjs leanjs, live coding on my Youtube Channel ",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon src/index.js"
+    "start:dev": "nodemon src/server.js"
   },
   "author": "Axel Espinosa",
   "license": "MIT",
