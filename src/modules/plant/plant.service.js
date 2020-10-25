@@ -19,9 +19,9 @@ let plants = [
   },
 ]
 
-module.exports = function plantService() {
-  function getAll() {
-    return plants
+module.exports = function plantService(dbModel) {
+  async function getAll() {
+    return await dbModel.find({})
   }
 
   function get(id) {
@@ -32,16 +32,18 @@ module.exports = function plantService() {
     return plant
   }
 
-  function store(data) {
-    if (!data.name || !data.url || !data.price) {
+  async function store(data) {
+    if (!data.name || !data.description) {
       throw new Error('Missing params in the request')
     }
 
-    console.log('Before: ')
-    console.log(plants)
-    plants.push(data)
-    console.log('After:')
-    console.log(plants)
+    const savePlant = await dbModel.create(data)
+
+    if (savePlant) {
+      return savePlant
+    }
+
+    throw new Error('Internal Server Error')
   }
 
   function destroy(id) {

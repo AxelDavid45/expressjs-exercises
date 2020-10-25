@@ -7,7 +7,10 @@ let db = null
 async function connection() {
   try {
     if (!db) {
-      db = await mongoose.connect(URI, { useNewUrlParser: true })
+      db = await mongoose.connect(URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
     }
     return db
   } catch (err) {

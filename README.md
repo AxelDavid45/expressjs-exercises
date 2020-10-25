@@ -28,11 +28,17 @@ npm run start:dev
 
 ## Environment variables
 
-Write your data
+Write your own data
 
 ```bash
 
 PORT=<port>
+
+#MONGO_DB
+MONGO_HOST=<database-host>
+MONGODB_NAME=<database-name>
+MONGODB_USR=<mongodb-user>
+MONGODB_PASSWORD=<user-password>
 
 ```
 

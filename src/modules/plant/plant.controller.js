@@ -1,11 +1,15 @@
 'use strict'
 const express = require('express')
 const router = express.Router()
-const plantService = require('./plant.service')()
+const plantService = require('./service-injection')
 
-router.get('/', (req, res) => {
-  const response = plantService.getAll()
-  res.json(response)
+router.get('/', async (req, res, next) => {
+  try {
+    const response = await plantService.getAll()
+    res.json(response)
+  } catch (err) {
+    next(err)
+  }
 })
 
 router.get('/:id', (req, res) => {
@@ -14,9 +18,9 @@ router.get('/:id', (req, res) => {
   res.json(response)
 })
 
-router.post('/', (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
-    const savePlant = plantService.store(req.body)
+    const savePlant = await plantService.store(req.body)
     res.statusCode = 201
     res.json(savePlant)
   } catch (err) {
@@ -29,6 +33,5 @@ router.delete('/:id', (req, res) => {
   const destroyPlant = plantService.destroy(id)
   res.json(destroyPlant)
 })
-
 
 module.exports = router
