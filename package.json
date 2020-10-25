@@ -4,7 +4,9 @@
   "description": "Application built in live coding on my Youtube Channel ",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon src/server.js"
+    "start:dev": "nodemon src/server.js",
+    "lint": "npx eslint src/**/*.js --fix",
+    "format": "npx prettier --write src/**/*.js " 
   },
   "author": "Axel Espinosa",
   "license": "MIT",
@@ -14,6 +16,13 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "eslint": "^7.12.0",
+    "eslint-config-standard": "^15.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "nodemon": "^2.0.4",
+    "prettier": "2.1.2"
   }
 }
