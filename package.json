@@ -1,7 +1,7 @@
 {
-  "name": "express-exercises",
+  "name": "express-livecoding",
   "version": "1.0.0",
-  "description": "Exercises expressjs leanjs, live coding on my Youtube Channel ",
+  "description": "Application built in live coding on my Youtube Channel ",
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon src/server.js"
