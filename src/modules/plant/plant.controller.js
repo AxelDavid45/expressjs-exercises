@@ -1,7 +1,7 @@
 'use strict'
 const express = require('express')
 const router = express.Router()
-const plantService = require('./plant.service')();
+const plantService = require('./plant.service')()
 
 router.get('/', (req, res) => {
   const response = plantService.getAll()

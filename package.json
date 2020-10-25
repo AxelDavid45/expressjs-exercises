@@ -6,17 +6,20 @@
   "scripts": {
     "start:dev": "nodemon src/server.js",
     "lint": "npx eslint src/**/*.js --fix",
-    "format": "npx prettier --write src/**/*.js " 
+    "format": "npx prettier --write src/**/*.js "
   },
   "author": "Axel Espinosa",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.10"
   },
   "devDependencies": {
     "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
     "eslint-config-standard": "^15.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",

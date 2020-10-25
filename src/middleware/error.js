@@ -1,7 +1,7 @@
 'use strict'
 const chalk = require('chalk')
 
-function error (err, req, res, next) {
+function error(err, req, res, next) {
   console.error(chalk.red(`[Error] ${new Date()}: ${err.message}`))
   console.error(chalk.red(err.stack))
 
